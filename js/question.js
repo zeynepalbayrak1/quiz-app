@@ -1,5 +1,5 @@
-function Question(guestionText, answerOptions, correctAnswer){
-     this.guestionText = guestionText;
+function Question(questionText, answerOptions, correctAnswer){
+     this.questionText = questionText;
      this.answerOptions = answerOptions;
      this.correctAnswer = correctAnswer;
 }

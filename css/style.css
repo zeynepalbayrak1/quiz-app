@@ -1,0 +1,77 @@
+.app-container{
+     width: 500px;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+}
+
+.option-list{
+     padding: 18px 10px;
+}
+
+.option-list .option{
+     border: 1px solid rgb(38, 34, 35);
+     border-radius: 5px;
+     padding: 8px 15px;
+     font-size: 15px;
+     margin-bottom: 10px;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+}
+
+.option-list .option:hover{
+     color: #112B2C;
+     background: yellow;
+}
+
+.option-list .option.correct{
+     color: green;
+     background: rgb(156, 238, 201);
+}
+
+.option-list .option.incorrect{
+     color: red;
+     background: rgb(245, 179, 179);
+}
+
+.option-list .option.disabled{
+     pointer-events: none;
+}
+
+.summary{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+}
+
+#score-box{
+     text-align: center;
+     padding: 25px;
+}
+
+#score-box i{
+     font-size: 80px;
+     color: rgb(32, 80, 191);
+}
+
+#score-box .score-text{
+     font-size: 16px;
+     font-weight: 600;
+     margin-top: 30px;
+     margin-bottom: -45px;
+}
+
+#button-box{
+     text-align: center;
+}
+
+#button-box, #quiz-box, #score-box{
+     display: none;
+}
+
+#button-box.active, #quiz-box.active, #score-box.active{
+     display: block;
+}
