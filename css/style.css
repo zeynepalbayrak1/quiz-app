@@ -5,7 +5,11 @@
      left: 50%;
      transform: translate(-50%, -50%);
 }
-
+#quiz-box #header{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
 .option-list{
      padding: 18px 10px;
 }
@@ -74,4 +78,37 @@
 
 #button-box.active, #quiz-box.active, #score-box.active{
      display: block;
+}
+
+/* time left */
+.time{
+     display: flex;
+     align-items: center;
+     background-color: rgb(6, 63, 6);
+     color: #fff;
+     padding: 5px;
+     border-radius: 30px;
+     font-size: 20px;
+}
+
+.time .time-text{
+     font-size: 15px;
+
+}
+
+.time .time-second{
+     background-color: rgb(233, 226, 9);
+     border-radius: 30px;
+     padding: 3px;
+     margin-left: 2px;
+     width: 30px;
+     text-align: center;
+}
+
+.btn-next{
+     display: none !important;
+}
+
+.btn-next.show{
+     display: block !important;
 }

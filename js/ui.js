@@ -9,6 +9,10 @@ function UI(){
      this.btnNext = document.querySelector(".btn-next");
      this.btnReplay = document.querySelector(".btn-replay");
      this.btnQuit = document.querySelector(".btn-quit");
+     this.timeText = document.querySelector(".time-text");
+     this.timeSecond = document.querySelector(".time-second");
+
+
 
 
 }
@@ -62,6 +66,6 @@ UI.prototype.showNumberOfQuestion = function(questionOrder, totalQuestion){
 }
 
 UI.prototype.showScore = function(correctAnswer, totalQuestion){
-     const tag = `Toplam ${totalQuestion} soruda ${correctAnswer} doğru cevap verdiniz.`;
+     const tag = `You answered correctly ${totalQuestion} of ${correctAnswer} questions.`;
      document.querySelector(".score-text").innerHTML = tag;
 }

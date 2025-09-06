@@ -14,16 +14,20 @@ const quiz = new Quiz(questionList);
 const ui = new UI();
 
 ui.btnStart.addEventListener("click", function(){
+     startTimer(10);
      ui.quizBox.classList.add("active");
      ui.buttonBox.classList.remove("active");
      ui.showQuestion(quiz.getQuestion());
      ui.showNumberOfQuestion(quiz.questionIndex + 1, quiz.questions.length);
+     ui.btnNext.classList.remove("show");
 })
 
 ui.btnNext.addEventListener("click", function(){
      if(quiz.questions.length != quiz.questionIndex){
+          startTimer(10);
           ui.showQuestion(quiz.getQuestion());
           ui.showNumberOfQuestion(quiz.questionIndex + 1, quiz.questions.length);
+          ui.btnNext.classList.remove("show");
      }else {
           ui.scoreBox.classList.add("active");
           ui.quizBox.classList.remove("active");
@@ -34,6 +38,7 @@ ui.btnNext.addEventListener("click", function(){
 });
 
 function optionSelected(e){
+     clearInterval(counter);
      let selectedElement = e.target;
 
      if(selectedElement.nodeName == "SPAN") {
@@ -52,9 +57,8 @@ function optionSelected(e){
           selectedElement.insertAdjacentHTML("beforeend", ui.inCorrectIcon);
      }
      quiz.questionIndex += 1;
-
-
      ui.disableAllOption();
+     ui.btnNext.classList.add("show");
 }
 
 ui.btnQuit.addEventListener("click", function(){
@@ -68,3 +72,23 @@ ui.btnReplay.addEventListener("click", function(){
      ui.btnStart.click();
      ui.scoreBox.classList.remove("active");
 })
+
+let counter;
+function startTimer(time){
+     counter = setInterval(timer, 1000);
+
+     function timer(){
+          ui.timeSecond.textContent = time;
+          time--;
+
+          if(time<0){
+               clearInterval(counter);
+               ui.timeText.textContent = "Time’s up!";
+
+               ui.disableAllOption();
+               quiz.questionIndex += 1;
+
+               ui.btnNext.classList.add("show");
+          }
+     }
+}
