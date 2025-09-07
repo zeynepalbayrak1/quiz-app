@@ -11,6 +11,8 @@ function UI(){
      this.btnQuit = document.querySelector(".btn-quit");
      this.timeText = document.querySelector(".time-text");
      this.timeSecond = document.querySelector(".time-second");
+     this.timeLine = document.querySelector(".time-line");
+
 
 
 
@@ -18,6 +20,9 @@ function UI(){
 }
 
 UI.prototype.showQuestion = function(question){
+
+     this.timeText.textContent = "Time Left";
+
      this.body.innerHTML = "";
 
      const cardBody = document.createElement("div");

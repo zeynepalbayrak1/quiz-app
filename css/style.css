@@ -9,6 +9,7 @@
      display: flex;
      justify-content: space-between;
      align-items: center;
+     position: relative;
 }
 .option-list{
      padding: 18px 10px;
@@ -58,7 +59,7 @@
 
 #score-box i{
      font-size: 80px;
-     color: rgb(32, 80, 191);
+     color: rgb(6, 83, 208)
 }
 
 #score-box .score-text{
@@ -84,10 +85,10 @@
 .time{
      display: flex;
      align-items: center;
-     background-color: rgb(6, 63, 6);
+     background-color: rgb(2, 163, 2);
      color: #fff;
      padding: 5px;
-     border-radius: 30px;
+     border-radius: 5px;
      font-size: 20px;
 }
 
@@ -97,18 +98,29 @@
 }
 
 .time .time-second{
-     background-color: rgb(233, 226, 9);
-     border-radius: 30px;
+     background: #ffa807;
+     border-radius: 5px;
      padding: 3px;
-     margin-left: 2px;
+     margin-left: 5px;
      width: 30px;
      text-align: center;
 }
 
 .btn-next{
-     display: none !important;
+     opacity: 0 !important;
+     transform: scale(0.8) !important;
+     transition: all 0.3s ease !important;
 }
 
 .btn-next.show{
-     display: block !important;
+     opacity: 1 !important;
+     transform: scale(1) !important;
+}
+
+.time-line{
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     height: 5px;
+     background: #ffa807;
 }
